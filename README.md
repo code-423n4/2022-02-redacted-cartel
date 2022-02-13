@@ -9,19 +9,16 @@
 
 This repo will be made public before the start of the contest. (C4 delete this line when made public)
 
-> Name of each contract and:
->   source lines of code (excluding blank lines and comments) in each
->   external contracts called in each
->   libraries used in each
+> Name of each contract, source lines of code, external contracts, and libraries
 
 BribeVault.sol
 - Source lines of code: 357
 - External contract calls
     - Line 187: IERC20(token).safeTransferFrom(briber, address(this), amount);
-    - Line 283-285: (bool sentFeeRecipient, ) = feeRecipient.call{value: feeAmount}(
+    - Lines 283-285: (bool sentFeeRecipient, ) = feeRecipient.call{value: feeAmount}(
                     ""
                 );
-    - Line 291-293: (bool sentDistributor, ) = distributor.call{
+    - Lines 291-293: (bool sentDistributor, ) = distributor.call{
                     value: distributorAmount
                 }("");
     - Line 296: IERC20(token).transfer(feeRecipient, feeAmount);
@@ -47,17 +44,17 @@ RewardDistributor.sol
 TokemakBribe.sol
 - Source lines of code: 303
 - External contract calls
-    - Line 201-203: IBribeVault(bribeVault).getBribe(
+    - Lines 201-203: IBribeVault(bribeVault).getBribe(
                 generateBribeVaultIdentifier(proposal, round, token)
             );
-    - Line 235-241: IBribeVault(bribeVault).depositBribeERC20(
+    - Lines 235-241: IBribeVault(bribeVault).depositBribeERC20(
             bribeIdentifier,
             rewardIdentifier,
             token,
             amount,
             msg.sender
         );
-    - Line 275-280: IBribeVault(bribeVault).depositBribe{value: msg.value}(
+    - Lines 275-280: IBribeVault(bribeVault).depositBribe{value: msg.value}(
             // NOTE: Native token bribes have bribeVault set as the address
             bribeIdentifier,
             rewardIdentifier,
@@ -89,7 +86,9 @@ Please review our README first to get an understanding of architecture, user rol
 ### Setup
 
 IDE: VSCode 1.64.2 (Universal)
+
 Node: 16.13.1
+
 NPM: 8.1.2
 
 1. Install global and local dependencies
