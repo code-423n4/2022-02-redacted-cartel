@@ -144,6 +144,18 @@ Please review our README first to get an understanding of architecture, user rol
 
 # Hidden Hand
 
+### Setup
+
+IDE: VSCode 1.64.2 (Universal)
+Node: 16.13.1
+NPM: 8.1.2
+
+1. Install global and local dependencies
+`npm i -g typescript && npm i`
+2. Create a `.env` file with the same variables as `.env.example` and set them
+3. Compile contracts and run tests to ensure the project is set up correctly
+`npx hardhat compile && npx hardhat test`
+
 ### Contract Overview
 
 **BribeVault.sol**
