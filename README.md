@@ -13,6 +13,7 @@ This repo will be made public before the start of the contest. (C4 delete this l
 
 BribeVault.sol
 - Source lines of code: 357
+- Sourcel line of code without comments or blank lines: 238
 - External contract calls
     - Line 187: IERC20(token).safeTransferFrom(briber, address(this), amount);
     - Lines 283-285: (bool sentFeeRecipient, ) = feeRecipient.call{value: feeAmount}(
@@ -33,6 +34,7 @@ BribeVault.sol
 
 RewardDistributor.sol
 - Source lines of code: 209
+- Sourcel line of code without comments or blank lines: 145
 - External contract calls
     - Line 179: IERC20(token).safeTransfer(_account, _amount);
     - Line 181: payable(_account).transfer(_amount);
@@ -43,6 +45,7 @@ RewardDistributor.sol
 
 TokemakBribe.sol
 - Source lines of code: 303
+- Sourcel line of code without comments or blank lines: 198
 - External contract calls
     - Lines 201-203: IBribeVault(bribeVault).getBribe(
                 generateBribeVaultIdentifier(proposal, round, token)
