@@ -66,9 +66,41 @@ Please review our README first to get an understanding of architecture, user rol
 - Libraries
     - None
 
+**ThecosomataETH.sol**
+- Source lines of code: 166
+- Source lines of code without comments or blank lines: 118
+- External contract calls
+    - Line 68: IERC20(_BTRFLY).approve(_CURVEPOOL, 2**256 - 1);
+    - Line 69: IERC20(_WETH).approve(_CURVEPOOL, 2**256 - 1);
+    - Line 71: _btrflyDecimals = IBTRFLY(_BTRFLY).decimals();
+    - Line 72: _ethDecimals = IBTRFLY(_WETH).decimals();
+    - Line 88: if (IBTRFLY(BTRFLY).balanceOf(address(this)) > 0) {
+    - Line 100: uint256 priceOracle = ICurveCryptoPool(CURVEPOOL).price_oracle();
+    - Lines 115-117: uint256 expectedAmount = ICurveCryptoPool(CURVEPOOL).calc_token_amount(
+            amounts
+        );
+    - Line 120: ICurveCryptoPool(CURVEPOOL).add_liquidity(amounts, minAmount);
+    - Line 127: uint256 btrfly = IBTRFLY(BTRFLY).balanceOf(address(this));
+    - Line 129: uint256 ethCap = IERC20(WETH).balanceOf(TREASURY);
+    - Line 137: IRedactedTreasury(TREASURY).manage(WETH, ethLiquidity);
+    - Line 144: address token = ICurveCryptoPool(CURVEPOOL).token();
+    - Line 145: uint256 tokenBalance = IERC20(token).balanceOf(address(this));
+    - Line 146: IERC20(token).transfer(TREASURY, tokenBalance);
+    - Line 148: uint256 unusedBTRFLY = IBTRFLY(BTRFLY).balanceOf(address(this));
+    - Line 151: IBTRFLY(BTRFLY).burn(unusedBTRFLY);
+    - Line 164: IERC20(token).transfer(recipient, amount);
+- Libraries
+    - None
+
+> Describe any novel or unique curve logic or mathematical models implemented in the contracts
+
+N/A
+
+> Does the token conform to the ERC-20 standard? In what specific ways does it differ?
+
+Hidden Hand does not have its own token.
 
 # Hidden Hand
-Hidden Hand does not have its own token.
 
 The goal of Hidden Hand is to facilitate voter incentivization for any protocol - flexibility and customizability is its core differentiation from other popular platforms, such as Votium and Votemak, which generally cater to one protocol. You will find that our architecture and methods of accessing, storing, and segregating data and funds adheres to that goal.
 
@@ -103,6 +135,9 @@ NPM: 8.1.2
 - Stores Tokemak-specific data used by the client (i.e. frontend app) to display info that directs users to take the right actions that make them eligible for rewards (e.g. vote for proposal X to get Y reward)
 - Contains the logic for generating identifiers that are used for storing and accessing relevant BribeVault data
 - Transfers all bribe tokens to the BribeVault as they are received and creates or updates the relevant records locally and on BribeVault
+
+**ThecosomataETH.sol**
+- Withdraws ETH from the Redacted treasury (such as the ETH from Hidden Hand bribe fees) and pairs it with BTRFLY to add Curve liquidity
 
 ### User Roles
 
