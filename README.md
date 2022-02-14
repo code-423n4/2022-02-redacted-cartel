@@ -7,11 +7,11 @@
 - Starts February 15, 2022 00:00 UTC
 - Ends February 17, 2022 23:59 UTC
 
-This repo will be made public before the start of the contest. (C4 delete this line when made public)
+## Contracts
 
-> Name of each contract, source lines of code, external contracts, and libraries
+Please review our README first to get an understanding of architecture, user roles, and action flow. Thank you.
 
-BribeVault.sol
+**BribeVault.sol**
 - Source lines of code: 357
 - Sourcel line of code without comments or blank lines: 238
 - External contract calls
@@ -32,7 +32,7 @@ BribeVault.sol
     - SafeERC20
     - Common
 
-RewardDistributor.sol
+**RewardDistributor.sol**
 - Source lines of code: 209
 - Sourcel line of code without comments or blank lines: 145
 - External contract calls
@@ -43,7 +43,7 @@ RewardDistributor.sol
     - MerkleProof
     - Common
 
-TokemakBribe.sol
+**TokemakBribe.sol**
 - Source lines of code: 303
 - Sourcel line of code without comments or blank lines: 198
 - External contract calls
@@ -66,24 +66,11 @@ TokemakBribe.sol
 - Libraries
     - None
 
-> Describe any novel or unique curve logic or mathematical models implemented in the contracts
-
-N/A
-
-> Does the token conform to the ERC-20 standard? In what specific ways does it differ?
-
-Hidden Hand does not have its own token.
-
-> Describe anything else that adds any special logic that makes your approach unique
-
-The goal of Hidden Hand is to facilitate voter incentivization for any protocol - flexibility and customizability is its core differentiation from other popular platforms, such as Votium and Votemak, which generally cater to one protocol. You will find that our architecture and methods of accessing, storing, and segregating data and funds adheres to that goal.
-
-> Identify any areas of specific concern in reviewing the code
-
-Please review our README first to get an understanding of architecture, user roles, and action flow. Thank you.
 
 # Hidden Hand
+Hidden Hand does not have its own token.
 
+The goal of Hidden Hand is to facilitate voter incentivization for any protocol - flexibility and customizability is its core differentiation from other popular platforms, such as Votium and Votemak, which generally cater to one protocol. You will find that our architecture and methods of accessing, storing, and segregating data and funds adheres to that goal.
 
 
 ### Setup
